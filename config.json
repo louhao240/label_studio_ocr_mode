@@ -1,0 +1,37 @@
+{
+    "labels": {
+        "default": "文本",
+        "title": "标题",
+        "paragraph": "段落",
+        "table": "表格",
+        "number": "数字",
+        "date": "日期",
+        "name": "姓名",
+        "address": "地址",
+        "phone": "电话",
+        "email": "邮箱",
+        "id": "证件号",
+        "org": "组织",
+        "price": "价格",
+        "time": "时间"
+    },
+    "model_settings": {
+        "use_angle_cls": false,
+        "lang": "ch",
+        "use_gpu": false,
+        "enable_mkldnn": false,
+        "cpu_threads": 1,
+        "det_limit_side_len": 960,
+        "det_limit_type": "max",
+        "rec_batch_num": 1,
+        "max_text_length": 25,
+        "use_space_char": true
+    },
+    "server_settings": {
+        "port": 9090,
+        "debug": false,
+        "memory_limit_mb": 800,
+        "log_level": "INFO",
+        "max_content_length": 16777216
+    }
+} 

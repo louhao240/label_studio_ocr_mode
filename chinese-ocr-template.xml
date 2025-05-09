@@ -1,0 +1,43 @@
+<View>
+  <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="true"/>
+  
+  <!-- 区域矩形标签 -->
+  <RectangleLabels name="rectanglelabels" toName="image">
+    <Label value="文本" background="#5F9EA0"/>
+    <Label value="标题" background="#FF8C00"/>
+    <Label value="段落" background="#6A5ACD"/>
+    <Label value="表格" background="#008000"/>
+    <Label value="数字" background="#FF4500"/>
+    <Label value="日期" background="#9370DB"/>
+    <Label value="姓名" background="#4682B4"/>
+    <Label value="地址" background="#B8860B"/>
+    <Label value="电话" background="#CD5C5C"/>
+    <Label value="邮箱" background="#2E8B57"/>
+    <Label value="证件号" background="#A0522D"/>
+    <Label value="组织" background="#4169E1"/>
+    <Label value="价格" background="#FF6347"/>
+    <Label value="时间" background="#7B68EE"/>
+  </RectangleLabels>
+  
+  <!-- 文本区域，用于OCR识别结果 -->
+  <TextArea name="transcription" toName="image" editable="true" perRegion="true" required="true" maxSubmissions="1" rows="5" placeholder="文本内容..." showSubmitButton="false" />
+
+  <!-- 模型预测结果 -->
+  <View visibleWhen="region-selected">
+    <Header value="模型识别结果" />
+    <Text name="score" value="置信度: $score" />
+  </View>
+
+  <!-- 结果展示 -->
+  <View style="box-shadow: 2px 2px 5px #999; padding: 10px; margin-top: 10px; border-radius: 5px;">
+    <Header value="识别结果统计" />
+    <Text name="result_info" value="已识别区域: $total_regions" />
+    <Text name="model_info" value="模型版本: PaddleOCR轻量级中文识别模型" />
+  </View>
+  
+  <!-- 注释说明 -->
+  <View style="margin-top: 15px;">
+    <Header value="操作指南" />
+    <Text name="instructions" value="1. 在图片上拖拽创建矩形区域&#10;2. 选择相应的文本类型标签&#10;3. 也可点击'自动检测'按钮由AI自动识别文本" />
+  </View>
+</View> 
